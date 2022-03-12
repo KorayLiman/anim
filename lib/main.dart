@@ -1,7 +1,15 @@
+import 'package:anim/TransformWidgets.dart';
+import 'package:anim/app.dart';
 import 'package:anim/new_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.orange));
   runApp(const MyApp());
 }
 
@@ -16,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NewPage(),
+      home: App(),
     );
   }
 }
